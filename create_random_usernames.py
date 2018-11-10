@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import numpy as np
 import random
+from random import uniform
 
 first_names = ['Sonam', 'Halmon', 'Nicole', 'Mariah', 'John', 'Sam',
          'Dan', 'Kevin', 'William', 'Sophia', 'Vanessa', 'Brian',
@@ -26,11 +27,56 @@ interests = ["tech", "food", "philosophy", "learning",
 
 # Prints 20 numbers
 age = [random.randint(17, 72) for _ in range(20)]
-print(len(p))
 
+
+# Generate a bunch within boston
+#a, b = gen_random_coord(42.361145, -71.057083, 5)
+#print(a, b)
+
+#x, y = uniform(-90,90), uniform(-180, 180)
+#print('lat, long = ', x, y)
+
+lat = [uniform(-71.10000, -71.057083) for _ in range(20)]
+lon = [uniform(42.34, 42.361145) for _ in range(20)]
+#print(lat)
+#print(lon)
+
+# Generate random user names
+
+
+
+usernames = [first_names[random.randint(0, len(first_names)-1)].lower() + \
+             last_names[random.randint(0, len(last_names)-1)].lower() + \
+             str(random.randint(2, 99)) for _ in range(20)]
+
+fns = []
+lns = []
+usnames = []
+
+for _ in range(20):
+    fn = first_names[random.randint(0, len(first_names)-1)]
+    ln = last_names[random.randint(0, len(last_names)-1)]
+    usname = fn.lower() + ln.lower() + str(random.randint(2, 99))
+    fns.append(fn)
+    lns.append(ln)
+    usnames.append(usname)
+
+#print(fns)
+#print(lns)
+#print(usnames)
+
+
+#print(first_names[random.randint(0, len(first_names))] + last_names[random.randint(0, len(last_names))].lower() + str(random.randint(2,99)))
+
+# Generate Pairs of interests
+interest_pairs = [(interests[random.randint(0, len(interests))], interests[random.randint(0, len(interests))]) for _ in range(20)]
+print(interest_pairs)
 
 
 # Empty Json Shell
-info = {'username': '', 'firstname': '', 'lastname': '', 'password': '', 'age' = 0, 'interests': [], 
-        'branch': [], 'location': {'city': '', 'state': '', 'country': ''}, 'geotag': {'lat': 0.0, 'long': 0.0}
-        }
+info = {'username': '', 'firstname': '', 'lastname': '', 'password': '', 'age': 0, 'interests': [],
+       'branch': [], 'location': {'city': '', 'state': '', 'country': ''}, 'geotag': {'lat': 0.0, 'long': 0.0}}
+
+# Generate Profiles
+
+
