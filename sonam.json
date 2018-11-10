@@ -1,0 +1,11 @@
+{
+  "name": "Sonam Ghosh",
+  "age" : "22",
+  "branch": "Space Force",
+  "interests": ["tech", "food", "philosophy", "learning",
+                "fitness", "outdoors", "photography", "drinks",
+                "music", "language", "film", "sci-fi",
+                "books", "art", "gaming", "lgbtq", "dance", "career",
+                "fashion", "travel"],
+
+}
