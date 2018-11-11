@@ -13,11 +13,10 @@ export default class LinksScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
 
-
         <View style={styles.search}>
           <TextInput
             style={styles.lighttext}
-            placeholder="Search" />
+            placeholder="Search for events" />
           <TouchableOpacity
               style={styles.enterbutton}
               onPress={() =>
@@ -26,14 +25,16 @@ export default class LinksScreen extends React.Component {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.header}>Invites</Text>
 
-        <Image source={pic} style={styles.veteranPic}/>
+
+        <Text style={styles.header}>Invites</Text>
+        <TouchableOpacity>
+          <Image source={pic} style={styles.veteranPic}/>
+        </TouchableOpacity>
+
 
 
         <Text style={styles.header}>Popular Events Near You</Text>
-
-
             <ScrollView style={styles.boxes} horizontal='true'>
                 <TouchableOpacity
                    style={styles.eventbutton}>
@@ -67,6 +68,22 @@ export default class LinksScreen extends React.Component {
             </ScrollView>
 
         <Text style={styles.header}>Veterans Nearby</Text>
+
+        <View style={styles.nearbyvets}>
+            <TouchableOpacity>
+              <Image source={pic} style={styles.veteranPic}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={pic} style={styles.veteranPic}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={pic} style={styles.veteranPic}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={pic} style={styles.veteranPic}/>
+            </TouchableOpacity>
+        </View>
+
       </ScrollView>
     );
   }
@@ -87,11 +104,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgrey'
   },
   eventbutton: {
-    height: 175,
+    height: 200,
     width: 140,
     backgroundColor: 'lightgrey',
-    padding: 10,
-    paddingVertical: 10,
+    marginLeft: 15,
   },
   boxes: {
     flex:1,
@@ -101,17 +117,23 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 50/2,
-    padding: 15,
+    marginLeft: 15,
   },
   lighttext: {
     fontSize: 16,
     textAlign: 'left',
     color: 'lightgrey',
-    width: '60%',
+    width: '80%',
     fontSize: 18,
   },
   search: {
     flexDirection: 'row',
     alignItems: 'stretch',
+  },
+  nearbyvets: {
+    flexDirection: 'row',
+  },
+  seeall: {
+    flexDirection: 'row',
   }
 });
