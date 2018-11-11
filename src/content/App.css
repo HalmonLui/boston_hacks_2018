@@ -1,0 +1,139 @@
+.App {
+  text-align: center;
+  background-color: #fff;
+}
+
+.App-header {
+  background-color: rgba(46,62,72,.6);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navigationBar {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.navTab {
+  flex: 1;
+  padding: 10px;
+}
+.navTab:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+}
+.navLink {
+  width: 100%;
+  height: 100%;
+}
+#blankNav {
+  flex: 6;
+}
+#newGroup {
+  color: #00a2c7;
+}
+#newGroup p {
+  border-right: .5px solid lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+#login {
+  color: rgba(46,62,72,.6);
+}
+#signUp {
+  color: rgba(46,62,72,.6);
+}
+#login:hover {
+  color: #00a2c7;
+}
+#signUp:hover {
+  color: #00a2c7;
+}
+
+
+
+
+.homeBanner {
+  background: url('https://media.giphy.com/media/TxP993EnjsJuo/giphy.gif');
+  color: #fff;
+  padding: 125px;
+}
+.signUpButton {
+  color: #fff;
+  background-color: rgb(241, 58, 89);
+  width: 20%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 2px;
+  border-radius: 5px;
+}
+.signUpButton:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.homeActivities {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.homeActivities p {
+  background-color: lightgray;
+  padding: 7px;
+  margin-right: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.homeMeetup {
+  border-radius: 5px;
+  
+}
+
+
+
+
+
+
+.Footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #2f363f;
+  color: #fff;
+  font-size: 14px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+.footerContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
+
+
+
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
