@@ -9,6 +9,8 @@ import Tab3 from './components/Tab3';
 import HomeTab from './components/HomeTab';
 import Footer from './components/Footer';
 import meetup from './images/meetup.JPG';
+import sellout from './images/sellout.JPG';
+
 class App extends Component {
   // Constructor to set initial states
   constructor(props){
@@ -46,6 +48,7 @@ class App extends Component {
         </body>
         <footer>
           <img src={meetup} className="meetup"/>
+          <img src={sellout} className="meetup"/>
           <Footer />
         </footer>
       </div>
