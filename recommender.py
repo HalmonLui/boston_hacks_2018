@@ -17,8 +17,8 @@ from scipy import sparse
 
 from collections import OrderedDict
 #path = './profiles'
-#path = './otherprofiles'
-path = './altdata'
+path = './otherprofiles'
+#path = './altdata'
 all_files = glob.glob(path + "/*.json")
 print(all_files)
 json_list = []
@@ -57,6 +57,31 @@ print(df.shape)
 
 
 
+
+import difflib
+closest_friend = []
+
+cols2 = 'interests'
+df2 = p[cols2].tolist()
+list_of_stuff = []
+for i in p[cols2]:
+    list_of_stuff.append(i)
+
+print(list_of_stuff)
+for i in range(1, len(list_of_stuff)):
+    sm = difflib.SequenceMatcher(None, list_of_stuff[0], list_of_stuff[i])
+    val = sm.ratio()
+    print(val)
+    closest_friend.append(val)
+
+print(closest_friend)
+#print(df2)
+
+
+
+
+
+
 def fast_similarity(ratings, kind='userID', epsilon=1e-9):
     # epsilon -> small number for handling dived-by-zero errors
     if kind == 'userID':
@@ -67,24 +92,24 @@ def fast_similarity(ratings, kind='userID', epsilon=1e-9):
     return (sim / norms / norms.T)
 
 n_users = df.userID.unique().shape[0]
-print(n_users)
+#print(n_users)
 ratings = np.zeros((n_users, n_users))
 for row in df.itertuples():
     ratings[row[0]-1, row[0]-1] = row[2]
     #ratings[row[1]-1, row[1]-1] = row[2]
 
-print(ratings)
+#print(ratings)
 sparsity = float(len(ratings.nonzero()[0]))
 sparsity /= (ratings.shape[0] * ratings.shape[1])
 sparsity *= 100
-print('sparsity: {:4.2f}%'.format(sparsity))
+#print('sparsity: {:4.2f}%'.format(sparsity))
 # Normal user vectors to unit vectors
 
 user_similarity = fast_similarity(ratings, kind='userID')
 item_similarity = fast_similarity(ratings, kind='rating')
-print(user_similarity[343, 413])
-pddd = pd.DataFrame(user_similarity)
-pddd.to_csv("what.csv")
+#print(user_similarity[343, 413])
+#pddd = pd.DataFrame(user_similarity)
+#pddd.to_csv("what.csv")
 # mag = sqrt(x2 + y2 + z2+ ..)
 #magnitude = np.sqrt(np.square(p.username).sum(axis=1))
 

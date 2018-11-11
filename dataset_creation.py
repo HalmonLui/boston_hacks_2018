@@ -21,21 +21,25 @@ t1.reset_index(level=0, inplace=True)
 t2 = pd.DataFrame.from_dict(dict_train2, orient='index')
 t2.reset_index(level=0, inplace=True)
 
-
-path = './profiles'
+from collections import OrderedDict
+#path = './profiles'
+#path = './otherprofiles'
+path = './otherprofiles'
 all_files = glob.glob(path + "/*.json")
 print(all_files)
 json_list = []
 for i in all_files:
     with open(i) as f:
-        a = json.load(f)
+        a = json.load(f, object_pairs_hook=OrderedDict)
         json_list.append(a)
 
 print(json_list)
 print(len(json_list))
 
+
+
 p = pd.DataFrame(json_list)
 print(p)
 
 print(p.shape)
-#p.to_csv('out.csv')
+p.to_csv('out4.csv')

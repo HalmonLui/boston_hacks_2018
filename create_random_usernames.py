@@ -21,7 +21,7 @@ last_names = ['Chen', 'Lui', 'Ghosh', 'Petit', 'Tang', 'Wan', 'He',
 s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
 passlen = 8
 
-passwords = ["".join(random.sample(s, passlen)) for _ in range(500)]
+passwords = ["".join(random.sample(s, passlen)) for _ in range(10)]
 
 interests = ["tech", "food", "philosophy", "learning",
             "fitness", "outdoors", "photography", "drinks",
@@ -45,7 +45,7 @@ info = {'username': '', 'userID': 0,
 
 
 # Prints 20 numbers
-age = [random.randint(17, 72) for _ in range(500)]
+age = [random.randint(17, 72) for _ in range(10)]
 
 
 # Generate a bunch within boston
@@ -55,8 +55,8 @@ age = [random.randint(17, 72) for _ in range(500)]
 #x, y = uniform(-90,90), uniform(-180, 180)
 #print('lat, long = ', x, y)
 
-lat = [uniform(-71.10000, -71.057083) for _ in range(500)]
-lon = [uniform(42.34, 42.361145) for _ in range(500)]
+lat = [uniform(-71.10000, -71.057083) for _ in range(10)]
+lon = [uniform(42.34, 42.361145) for _ in range(10)]
 #print(lat)
 #print(lon)
 
@@ -66,13 +66,13 @@ lon = [uniform(42.34, 42.361145) for _ in range(500)]
 
 usernames = [first_names[random.randint(0, len(first_names)-1)].lower() + \
              last_names[random.randint(0, len(last_names)-1)].lower() + \
-             str(random.randint(2, 999)) for _ in range(500)]
+             str(random.randint(2, 999)) for _ in range(10)]
 
 fns = []
 lns = []
 usnames = []
 
-for _ in range(500):
+for _ in range(10):
     fn = first_names[random.randint(0, len(first_names)-1)]
     ln = last_names[random.randint(0, len(last_names)-1)]
     usname = fn.lower() + ln.lower() + str(random.randint(2, 999))
@@ -88,7 +88,7 @@ for _ in range(500):
 #print(first_names[random.randint(0, len(first_names))] + last_names[random.randint(0, len(last_names))].lower() + str(random.randint(2,99)))
 
 # Generate Pairs of interests
-interest_pairs = [(interests[random.randint(0, len(interests)-1)], interests[random.randint(0, len(interests)-1)]) for _ in range(500)]
+interest_pairs = [(interests[random.randint(0, len(interests)-1)], interests[random.randint(0, len(interests)-1)]) for _ in range(10)]
 #print(interest_pairs)
 
 """
@@ -103,7 +103,7 @@ interest_pairs = [(interests[random.randint(0, len(interests)-1)], interests[ran
 infoz = []
 rtings = []
 fvinterests = []
-for _ in range(500):
+for _ in range(10):
     tup = [0 for _ in range(random.randint(1, 5))]
     idxs = random.sample(range(0, len(interests)), len(tup))
     for i in range(len(tup)):
@@ -120,7 +120,7 @@ for _ in range(500):
 
 # Branch mmilitary rand
 branches = ['Army', 'Navy', 'Marine Corps', 'Air Force', 'Coast Guard']
-bchs = [random.choice(branches) for _ in range(500)]
+bchs = [random.choice(branches) for _ in range(10)]
 
 
 
@@ -136,7 +136,7 @@ choices = ["tech", "food", "philosophy", "learning",
                  "books", "art", "gaming", "lgbtq", "dance", "career",
                  "fashion", "travel"]
 # Generate Profiles
-for i in range(500):
+for i in range(10):
     info['username'] = usnames[i]
     info['userID'] = 'u'+str(i+1)
     info['name']['first'] = fns[i]
@@ -155,7 +155,7 @@ for i in range(500):
     info['location']['country'] = 'USA'
     info['geotag']['lat'] = lat[i]
     info['geotag']['long'] = lon[i]
-    with open('./altdata/' + usnames[i] + '.json', 'w') as f:
+    with open('./otherprofiles/' + usnames[i] + '.json', 'w') as f:
         json.dump(info, f, indent=4)
     info = {'username': '', 'name': {'first': '', 'last': ''}, 'password': '', 'age': 0, 
         'interests': '',
