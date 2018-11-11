@@ -59,7 +59,9 @@
 
 
 .homeBanner {
-  background: url('https://media.giphy.com/media/TxP993EnjsJuo/giphy.gif');
+  background: url('https://orig00.deviantart.net/fc3e/f/2016/124/6/2/usa_by_dimongr-da1aegd.gif');
+  background-size: 100%;
+  background-position: center;
   color: #fff;
   padding: 125px;
 }
@@ -97,6 +99,11 @@
   height: 50px;
   border-radius: 100px;
 }
+.eventImage{
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 .meetupSplit {
   display: flex;
   flex-direction: row;
@@ -108,7 +115,6 @@
   flex-direction: column;
   background-color: #fff;
   margin: 20px;
-  padding: 10px;
   text-align: left;
   box-shadow: 2px 2px lightgray;
 }
@@ -123,6 +129,9 @@
   flex-direction: column;
 }
 
+.meetup{
+  width: 100%;
+}
 
 
 

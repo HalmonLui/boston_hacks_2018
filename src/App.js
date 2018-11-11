@@ -8,7 +8,7 @@ import Tab2 from './components/Tab2';
 import Tab3 from './components/Tab3';
 import HomeTab from './components/HomeTab';
 import Footer from './components/Footer';
-
+import meetup from './images/meetup.JPG';
 class App extends Component {
   // Constructor to set initial states
   constructor(props){
@@ -37,7 +37,7 @@ class App extends Component {
           />
         </header>
         <body>
-          
+
           {(this.state.view == "home") && <HomeTab />}
           {(this.state.view == "tab1") && <Tab1 />}
           {(this.state.view == "tab2") && <Tab2 />}
@@ -45,6 +45,7 @@ class App extends Component {
           {(this.state.view == "about") && <AboutTab />}
         </body>
         <footer>
+          <img src={meetup} className="meetup"/>
           <Footer />
         </footer>
       </div>

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import brian from '../images/brian.jpg';
+import green from '../images/greentech.jpg';
+import beer from '../images/beer.jpg';
+import health from '../images/health.jpg';
+
 class AboutTab extends Component {
   constructor(props) {
      super(props);
@@ -33,28 +37,25 @@ class AboutTab extends Component {
             <h2>Popular Meetups Nearby</h2>
             <div className="meetupSplit">
               <div className="homeMeetup">
-                <div className="meetupImage">
-                  <p>Date Here</p>
-                </div>
+                <img className="eventImage" src={beer} />
                 <div>
 
                   <h2>Community Games and Beer!</h2>
                   <div className="homeImageSplit">
                     <img className="userImage" src={brian} />
                     <div className="homeTextSplit">
-                      <p>Hosted by Sonam Ghosh</p>
+                      <p>   Hosted by Sonam Ghosh</p>
                       <p>From BU SASE, Boston</p>
                     </div>
                   </div>
-                </div> 
+                </div>
               </div>
               <div className="homeMeetup">
-                <p>Image Here</p>
+                <img className="eventImage" src={green} />
                 <div>
-                  <p>Date Here</p>
                   <h2>Green tech Entrepreneur Forum & Brainstorming.</h2>
                   <div className="homeImageSplit">
-                    <p>IMG</p>
+                    <img className="userImage" src={brian} />
                     <div className="homeTextSplit">
                       <p>Hosted by Nicole Chen</p>
                       <p>From BU Green Club, Boston</p>
@@ -63,12 +64,11 @@ class AboutTab extends Component {
                 </div>
               </div>
               <div className="homeMeetup">
-                <p>Image Here</p>
+                <img className="eventImage" src={health} />
                 <div>
-                  <p>Date Here</p>
                   <h2>Mental Health and Imposter Syndrome at Work: Panel</h2>
                   <div className="homeImageSplit">
-                    <p>IMG</p>
+                    <img className="userImage" src={brian} />
                     <div className="homeTextSplit">
                       <p>Hosted by Mariah Buccat</p>
                       <p>From BU Health Club, Boston</p>
