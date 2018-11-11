@@ -11,6 +11,15 @@ export default class LinksScreen extends React.Component {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Memorial_Day_2013_%E2%80%93_San_Francisco_National_Cemetery_%E2%80%93_06.jpg'
     };
+    let sonam = {
+      uri: 'https://media.licdn.com/dms/image/C5603AQG5ONUJiEDStg/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=RvOqZTml4cyXyuBazzgMYqooqhmy1w24vssc4LpeW6o'
+    };
+    let nicole = {
+      uri: 'https://media.licdn.com/dms/image/C5603AQF261MyxCC3Bw/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=qc0IoafKxPykJ2Blob2kEFqTjSULEE0K1Ofhb1uNh9g'
+    };
+    let bill = {
+      uri: 'https://media.licdn.com/dms/image/C5603AQHv9IK9Ts0dFA/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=ULAiepVc0abj51GEPA7Feyv0YOB64s5Tk5xAuI2QyXQ'
+    };
     return (
       <ScrollView style={styles.container}>
 
@@ -56,19 +65,25 @@ export default class LinksScreen extends React.Component {
                   </ImageBackground>
                 </TouchableOpacity>
 
+                <TouchableOpacity style={styles.eventbutton}>
+                  <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/bowling.jpg')}>
+                    <Text style={styles.eventheader}> Bowling</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+
             </ScrollView>
 
         <Text style={styles.header}>Veterans Nearby</Text>
 
         <View style={styles.nearbyvets}>
             <TouchableOpacity>
-              <Image source={pic} style={styles.veteranPic}/>
+              <Image source={sonam} style={styles.veteranPic}/>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Image source={pic} style={styles.veteranPic}/>
+              <Image source={nicole} style={styles.veteranPic}/>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Image source={pic} style={styles.veteranPic}/>
+              <Image source={bill} style={styles.veteranPic}/>
             </TouchableOpacity>
             <TouchableOpacity>
               <Image source={pic} style={styles.veteranPic}/>
@@ -121,12 +136,14 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   SearchBar: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowColor: 'lightgray',
+    shadowOffset: { width: 0, height: .5 },
+    shadowOpacity: 0.4,
+    shadowRadius: 1,
+    elevation: 1,
     backgroundColor:'#fff',
+    borderRadius: 5,
+    margin: 10,
   },
   nearbyvets: {
     flexDirection: 'row',

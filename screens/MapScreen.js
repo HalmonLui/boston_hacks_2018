@@ -96,20 +96,52 @@ export default class MapScreen extends React.Component {
           </MapView>
         <ScrollView style={styles.eventsContainer}>
           <View style={styles.eventSplit}>
+          <TouchableOpacity style={styles.eventTouch}>
             <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/kayak.jpg')}>
-              <Text style={styles.eventheader}> Sonam</Text>
+                <Text style={styles.eventheader}> Sonam</Text>
             </ImageBackground>
-            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/kayak.jpg')}>
-              <Text style={styles.eventheader}> Sonam</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/hiking.jpg')}>
+              <Text style={styles.eventheader}> Brian</Text>
             </ImageBackground>
+          </TouchableOpacity>
           </View>
           <View style={styles.eventSplit}>
-            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/kayak.jpg')}>
-              <Text style={styles.eventheader}> Sonam</Text>
+          <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/baseball.jpg')}>
+              <Text style={styles.eventheader}> Halmon</Text>
             </ImageBackground>
-            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/kayak.jpg')}>
-              <Text style={styles.eventheader}> Sonam</Text>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/bowling.jpg')}>
+              <Text style={styles.eventheader}> Nicole</Text>
             </ImageBackground>
+          </TouchableOpacity>
+          </View>
+          <View style={styles.eventSplit}>
+          <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/hiking.jpg')}>
+              <Text style={styles.eventheader}> Mariah</Text>
+            </ImageBackground>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/kayak.jpg')}>
+              <Text style={styles.eventheader}> Kevin</Text>
+            </ImageBackground>
+          </TouchableOpacity>
+          </View>
+          <View style={styles.eventSplit}>
+          <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/bowling.jpg')}>
+              <Text style={styles.eventheader}> Wollo</Text>
+            </ImageBackground>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.eventTouch}>
+            <ImageBackground style={styles.eventImage} imageStyle={{ borderRadius: 5 }} source={require('../images/baseball.jpg')}>
+              <Text style={styles.eventheader}> Dan</Text>
+            </ImageBackground>
+          </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
@@ -132,15 +164,22 @@ const styles = StyleSheet.create({
      top: 0,
      left: 0,
      right: 0,
-     bottom: 300,
+     bottom: '40%',
  },
  eventheader: {
    fontWeight: 'bold',
    fontSize: 20,
-   padding: 15,
+   padding: 10,
+   paddingTop: 75,
+   margin: 5,
    textAlign: 'left',
    textAlignVertical: 'bottom',
    color: '#fff',
+ },
+ eventTouch: {
+   flex: 1,
+   width: '100%',
+   margin: 5,
  },
  eventImage: {
    flex: 1,
@@ -149,8 +188,12 @@ const styles = StyleSheet.create({
  eventsContainer: {
    position: 'absolute',
    bottom: 0,
+   left: 0,
+   right: 0,
+   top: '60%',
  },
  eventSplit: {
+   flex: 1,
    display: 'flex',
    flexDirection: 'row',
  },

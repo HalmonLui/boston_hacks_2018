@@ -13,9 +13,16 @@ import {
   TextInput,
   KeyboardAvoidingView,
 } from 'react-native';
+import { Divider } from 'react-native-elements'
 import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
+const users = [
+ {
+    name: 'Sonam Ghosh',
+    avatar: 'https://media.licdn.com/dms/image/C5603AQG5ONUJiEDStg/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=RvOqZTml4cyXyuBazzgMYqooqhmy1w24vssc4LpeW6o'
+ },
+]
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -28,80 +35,84 @@ export default class HomeScreen extends React.Component {
     header: null,
   };
 
-  emailSignIn() {
-    this.setState({emailSignIn: 'true'})
-  };
-
-  backButton() {
-    this.setState({emailSignIn: 'false'})
-  };
+  logoff = () => {
+      this.props.navigation.navigate('Login');
+  }
 
   render() {
+    let pic = {
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Memorial_Day_2013_%E2%80%93_San_Francisco_National_Cemetery_%E2%80%93_06.jpg'
+    };
+    let sonam = {
+      uri: 'https://media.licdn.com/dms/image/C5603AQG5ONUJiEDStg/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=RvOqZTml4cyXyuBazzgMYqooqhmy1w24vssc4LpeW6o'
+    };
+    let nicole = {
+      uri: 'https://media.licdn.com/dms/image/C5603AQF261MyxCC3Bw/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=qc0IoafKxPykJ2Blob2kEFqTjSULEE0K1Ofhb1uNh9g'
+    };
+    let bill = {
+      uri: 'https://media.licdn.com/dms/image/C5603AQHv9IK9Ts0dFA/profile-displayphoto-shrink_800_800/0?e=1547683200&v=beta&t=ULAiepVc0abj51GEPA7Feyv0YOB64s5Tk5xAuI2QyXQ'
+    };
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <StatusBar hidden/>
+        <TouchableOpacity onPress={this.logoff}>
+          <Text>Log Off</Text>
+        </TouchableOpacity>
 
-        {
-          (this.state.emailSignIn == "false") &&
+        <View style={styles.sonamContainer}>
+          <Image source={pic} style={styles.veteranPic}/>
+          <Text style={styles.nameText}>John Smith</Text>
+          <Text style={styles.profileText}>Boston, MA</Text>
+          <Text style={styles.profileText}>Served in Afghanistan in 2012</Text>
+          <Text style={styles.profileText}>US Navy Seal</Text>
+        </View>
 
-          <View style={styles.boxContainer}>
-          <Image source={require('../images/logo.png')} style={styles.logo}/>
-          <Text style={styles.lighttext}> Serving those who served </Text>
-          <TouchableOpacity
-            style={styles.fbbutton}
-            onPress={() =>
-            navigate()}
-          >
-            <Text style={styles.whiteheader}>Sign in with Facebook</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-             style={styles.button}
-             onPress={() => this.emailSignIn()}
-          >
-            <Text style={styles.whiteheader}> Sign in with email</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-             style={styles.clickabletext}
-             onPress={() =>
-             navigate()
-          }>
-            <Text style={styles.header}>Make an account</Text>
-          </TouchableOpacity>
-        </View>}
+        <View style={styles.sonamContainer}>
+          <View style={styles.sonamTop}>
+            <Image source={sonam} style={styles.sonamPic}/>
+            <View style={{flexDirection:'column'}}>
+              <Text style={styles.commenterNameText}>Sonam Ghosh</Text>
+              <Text style={{marginLeft: 10}}>Thank you for serving our country</Text>
+            </View>
+          </View>
+          <Divider style={{ backgroundColor: 'lightgray' }} />
+          <View style={styles.sonamBottom}>
+            <Image style={{width: 25, height: 25, marginRight:20,}} source={require('../images/heart.png')} />
+            <Image style={{width: 25, height: 25}} source={require('../images/share.png')} />
+          </View>
+        </View>
 
-        {
-          (this.state.emailSignIn=="true") &&
-          <KeyboardAvoidingView style={styles.boxContainer}>
-            <TouchableOpacity
-              onPress={() => this.backButton()}>
-              <Text>BACK</Text>
-            </TouchableOpacity>
-            <TextInput
-              style={styles.loginText, textAlign='left'}
-              placeholder="Email" />
+        <View style={styles.sonamContainer}>
+          <View style={styles.sonamTop}>
+            <Image source={bill} style={styles.sonamPic}/>
+            <View style={{flexDirection:'column'}}>
+              <Text style={styles.commenterNameText}>Bill Gates</Text>
+              <Text style={{marginLeft:10}}>I donated to your charity</Text>
+            </View>
+          </View>
+          <Divider style={{ backgroundColor: 'lightgray' }} />
+          <View style={styles.sonamBottom}>
+            <Image style={{width: 25, height: 25, marginRight:20,}} source={require('../images/heart.png')} />
+            <Image style={{width: 25, height: 25}} source={require('../images/share.png')} />
+          </View>
+        </View>
 
-            <TextInput
-              style={styles.loginText, textAlign='left'}
-              secureTextEntry={true}
-              placeholder="Password" />
+        <View style={styles.sonamContainer}>
+          <View style={styles.sonamTop}>
+            <Image source={nicole} style={styles.sonamPic}/>
+            <View style={{flexDirection:'column'}}>
+              <Text style={styles.commenterNameText}>Nicole Chen</Text>
+              <Text style={{marginLeft:10}}>I can carry you in League</Text>
+            </View>
+          </View>
+          <Divider style={{ backgroundColor: 'lightgray' }} />
+          <View style={styles.sonamBottom}>
+            <Image style={{width: 25, height: 25, marginRight:20,}} source={require('../images/heart.png')} />
+            <Image style={{width: 25, height: 25}} source={require('../images/share.png')} />
+          </View>
+        </View>
 
-            <TouchableOpacity
-               style={styles.clickabletext}
-               onPress={() =>
-               navigate()
-            }>
-              <Text style={styles.header}>Sign In</Text>
-            </TouchableOpacity>
-
-
-
-
-
-          </KeyboardAvoidingView>
-        }
-
-
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -109,67 +120,56 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#0A556D',
   },
-  appname: {
-    fontWeight: 'bold',
-    fontSize: 50,
-    textAlign: 'center',
-    color: 'grey',
-  },
-  logo: {
+  veteranPic: {
+    flexDirection: 'row',
+    width: 100,
+    height: 100,
+    borderRadius: 100,
     alignSelf: 'center',
   },
-  lighttext: {
-    fontSize: 16,
+  profileText: {
     textAlign: 'center',
-    color: 'lightgrey',
-  },
-  loginText: {
-    flex: 1,
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'lightgrey',
-  },
-  header: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 16,
-  },
-  whiteheader: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 16,
-  },
-  button: {
-    backgroundColor: '#5097d5',
-    margin: 10,
     padding: 10,
   },
-  fbbutton: {
-    backgroundColor: '#3D5B69',
-    margin: 10,
-    padding: 10,
+  sonamPic: {
+    width: 50,
+    height: 50,
+    borderRadius: 100,
   },
-  boxContainer: {
-    backgroundColor: 'rgb(246, 246, 246)',
-    flex: 1,
+  sonamContainer: {
     flexDirection: 'column',
-    justifyContent: 'center',
-    margin: 20,
-    padding: 30,
-    width: '100%',
-  },
-  clickabletext: {
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     margin: 10,
     padding: 10,
-
-  }
+    borderRadius: 2,
+    shadowColor: 'lightgray',
+    shadowOffset: { width: 0, height: .5 },
+    shadowOpacity: 0.4,
+    shadowRadius: 1,
+  },
+  sonamTop: {
+    flexDirection: 'row',
+    paddingTop: 50,
+    paddingBottom: 50,
+    paddingLeft: 15,
+  },
+  sonamBottom: {
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20,
+  },
+  nameText: {
+    fontWeight:'bold',
+    fontSize:20,
+    textAlign: 'center'
+  },
+  commenterNameText: {
+    fontWeight:'bold',
+    fontSize:15,
+    marginLeft: 10,
+  },
 
 
 });
