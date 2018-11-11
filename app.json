@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "boston-hacks-2018-app",
+    "name": "vetricle",
     "description": "A very interesting project.",
-    "slug": "boston-hacks-2018-app",
+    "slug": "vetricle",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

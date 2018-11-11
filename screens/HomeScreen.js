@@ -14,7 +14,6 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
@@ -33,6 +32,10 @@ export default class HomeScreen extends React.Component {
     this.setState({emailSignIn: 'true'})
   };
 
+  backButton() {
+    this.setState({emailSignIn: 'false'})
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,8 +45,8 @@ export default class HomeScreen extends React.Component {
           (this.state.emailSignIn == "false") &&
 
           <View style={styles.boxContainer}>
-          <Text style={styles.appname}> VetUP </Text>
-          <Text style={styles.lighttext}> Meet other veterans in your area </Text>
+          <Image source={require('../images/logo.png')} style={styles.logo}/>
+          <Text style={styles.lighttext}> Serving those who served </Text>
           <TouchableOpacity
             style={styles.fbbutton}
             onPress={() =>
@@ -55,7 +58,7 @@ export default class HomeScreen extends React.Component {
              style={styles.button}
              onPress={() => this.emailSignIn()}
           >
-            <Text style={styles.header}> Sign in with email</Text>
+            <Text style={styles.whiteheader}> Sign in with email</Text>
           </TouchableOpacity>
           <TouchableOpacity
              style={styles.clickabletext}
@@ -69,6 +72,10 @@ export default class HomeScreen extends React.Component {
         {
           (this.state.emailSignIn=="true") &&
           <KeyboardAvoidingView style={styles.boxContainer}>
+            <TouchableOpacity
+              onPress={() => this.backButton()}>
+              <Text>BACK</Text>
+            </TouchableOpacity>
             <TextInput
               style={styles.loginText, textAlign='left'}
               placeholder="Email" />
@@ -113,6 +120,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'grey',
   },
+  logo: {
+    alignSelf: 'center',
+  },
   lighttext: {
     fontSize: 16,
     textAlign: 'center',
@@ -136,7 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   button: {
-    backgroundColor: 'powderblue',
+    backgroundColor: '#5097d5',
     margin: 10,
     padding: 10,
   },
@@ -146,7 +156,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   boxContainer: {
-    backgroundColor: 'white',
+    backgroundColor: 'rgb(246, 246, 246)',
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
