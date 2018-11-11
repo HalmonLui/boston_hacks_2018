@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import random
 from random import uniform
+import requests
 
 first_names = ['Sonam', 'Halmon', 'Nicole', 'Mariah', 'John', 'Sam',
          'Dan', 'Kevin', 'William', 'Sophia', 'Vanessa', 'Brian',
@@ -69,14 +70,44 @@ for _ in range(20):
 #print(first_names[random.randint(0, len(first_names))] + last_names[random.randint(0, len(last_names))].lower() + str(random.randint(2,99)))
 
 # Generate Pairs of interests
-interest_pairs = [(interests[random.randint(0, len(interests))], interests[random.randint(0, len(interests))]) for _ in range(20)]
-print(interest_pairs)
+interest_pairs = [(interests[random.randint(0, len(interests)-1)], interests[random.randint(0, len(interests)-1)]) for _ in range(20)]
+#print(interest_pairs)
+
+infoz = []
+for _ in range(20):
+    tup = [0 for _ in range(random.randint(1, 5))]
+    idxs = random.sample(range(0, len(interests)), len(tup))
+    for i in range(len(tup)):
+        tup[i] = [interests[j] for j in idxs]
+        infoz.append(tup[i])
+
+print(infoz)
+
+
+# Branch mmilitary rand
+branches = ['Army', 'Navy', 'Marine Corps', 'Air Force', 'Coast Guard']
+bchs = [random.choice(branches) for _ in range(20)]
+
 
 
 # Empty Json Shell
-info = {'username': '', 'firstname': '', 'lastname': '', 'password': '', 'age': 0, 'interests': [],
+info = {'username': '', 'name': {'first': '', 'last': ''}, 'password': '', 'age': 0, 'interests': [],
        'branch': [], 'location': {'city': '', 'state': '', 'country': ''}, 'geotag': {'lat': 0.0, 'long': 0.0}}
 
 # Generate Profiles
-
+for i in range(20):
+    info['username'] = usnames[i]
+    info['name']['first'] = fns[i]
+    info['name']['last'] = lns[i]
+    info['password'] = passwords[i]
+    info['age'] = age[i]
+    info['interests'] = infoz[i]
+    info['branch'] = bchs[i]
+    info['location']['city'] = 'Boston'
+    info['location']['state'] = 'MA'
+    info['location']['country'] = 'USA'
+    info['geotag']['lat'] = lat[i]
+    info['geotag']['long'] = lon[i]
+    with open('./profiles/' + usnames[i] + '.json', 'w') as f:
+        json.dump(info, f, indent=4)
 
