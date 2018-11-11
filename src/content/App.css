@@ -88,12 +88,40 @@
   margin: 10px;
   border-radius: 5px;
 }
-.homeMeetup {
-  border-radius: 5px;
-  
+.homeActivities p:hover {
+  cursor: pointer;
+  opacity: .8;
 }
-
-
+.userImage{
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.meetupSplit {
+  display: flex;
+  flex-direction: row;
+}
+.homeMeetup {
+  flex: 1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 20px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 2px 2px lightgray;
+}
+.homeImageSplit {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.homeTextSplit {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
 
 
@@ -107,8 +135,8 @@
   background-color: #2f363f;
   color: #fff;
   font-size: 14px;
-  bottom: 0;
-  position: absolute;
+  bottom: 0px;
+  position: static;
   width: 100%;
 }
 .footerContainer {

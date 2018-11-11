@@ -9,14 +9,13 @@ import Tab3 from './components/Tab3';
 import HomeTab from './components/HomeTab';
 import Footer from './components/Footer';
 
-
 class App extends Component {
   // Constructor to set initial states
   constructor(props){
     super(props);
     this.state = {
       view: "home",
-      loggedOn: false,
+      loggedOn: false
     }
   };
 
@@ -38,6 +37,7 @@ class App extends Component {
           />
         </header>
         <body>
+          
           {(this.state.view == "home") && <HomeTab />}
           {(this.state.view == "tab1") && <Tab1 />}
           {(this.state.view == "tab2") && <Tab2 />}
@@ -51,5 +51,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
