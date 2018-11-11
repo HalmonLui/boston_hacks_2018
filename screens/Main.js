@@ -46,7 +46,7 @@ class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Enter your name:</Text>
+        <Text style={styles.title}>Enter recipient:</Text>
         <TextInput
           style={styles.nameInput}
           placeHolder="John Cena"
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     marginLeft: offset,
-    fontSize: 30,
+    fontSize: 20,
     textAlign: 'right',
     marginRight: 5,
   },

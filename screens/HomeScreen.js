@@ -72,7 +72,7 @@ export default class HomeScreen extends React.Component {
             <Image source={sonam} style={styles.sonamPic}/>
             <View style={{flexDirection:'column'}}>
               <Text style={styles.commenterNameText}>Sonam Ghosh</Text>
-              <Text style={{marginLeft: 10}}>Thank you for serving our country</Text>
+              <Text style={styles.commenterText}>Thank you for serving our country</Text>
             </View>
           </View>
           <Divider style={{ backgroundColor: 'lightgray' }} />
@@ -87,7 +87,7 @@ export default class HomeScreen extends React.Component {
             <Image source={bill} style={styles.sonamPic}/>
             <View style={{flexDirection:'column'}}>
               <Text style={styles.commenterNameText}>Bill Gates</Text>
-              <Text style={{marginLeft:10}}>I donated to your charity</Text>
+              <Text style={styles.commenterText}>I donated to your charity</Text>
             </View>
           </View>
           <Divider style={{ backgroundColor: 'lightgray' }} />
@@ -102,7 +102,7 @@ export default class HomeScreen extends React.Component {
             <Image source={nicole} style={styles.sonamPic}/>
             <View style={{flexDirection:'column'}}>
               <Text style={styles.commenterNameText}>Nicole Chen</Text>
-              <Text style={{marginLeft:10}}>I can carry you in League</Text>
+              <Text style={styles.commenterText}>I can carry you in League</Text>
             </View>
           </View>
           <Divider style={{ backgroundColor: 'lightgray' }} />
@@ -168,6 +168,10 @@ const styles = StyleSheet.create({
   },
   commenterNameText: {
     fontWeight:'bold',
+    fontSize:15,
+    marginLeft: 10,
+  },
+  commenterText: {
     fontSize:15,
     marginLeft: 10,
   },
