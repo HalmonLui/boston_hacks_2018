@@ -1,0 +1,22 @@
+{
+    "username": "sonamtang16",
+    "name": {
+        "first": "Sonam",
+        "last": "Tang"
+    },
+    "password": "Nwx0ChG)",
+    "age": 61,
+    "interests": [
+        "career"
+    ],
+    "branch": "Navy",
+    "location": {
+        "city": "Boston",
+        "state": "MA",
+        "country": "USA"
+    },
+    "geotag": {
+        "lat": -71.05797710775282,
+        "long": 42.35035601913832
+    }
+}
