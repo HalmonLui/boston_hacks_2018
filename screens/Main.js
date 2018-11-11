@@ -96,8 +96,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     marginLeft: offset,
-    fontSize: offset,
-    textAlign: 'right'
+    fontSize: 30,
+    textAlign: 'right',
+    marginRight: 5,
   },
   rowViewContainer: {
     fontSize: 25,

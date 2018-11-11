@@ -185,11 +185,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#5097d5',
     margin: 10,
     padding: 10,
+    borderRadius: 5,
   },
   fbbutton: {
     backgroundColor: '#3D5B69',
     margin: 10,
     padding: 10,
+    borderRadius: 5,
   },
   boxContainer: {
     backgroundColor: 'rgb(246, 246, 246)',

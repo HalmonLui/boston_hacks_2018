@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, Image } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -47,11 +47,16 @@ const MapStack = createStackNavigator({
 
 MapStack.navigationOptions = {
   tabBarLabel: 'Map',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
+  tabBarIcon: ({ focused,tintColor }) => (
+     focused ? <Image
+         source={require('../images/map-selected.png')}
+
+       />
+       :
+       <Image
+         source={require('../images/map.png')}
+
+       />
   ),
 };
 
@@ -62,11 +67,16 @@ const MainStack = createStackNavigator({
 
 MainStack.navigationOptions = {
   tabBarLabel: 'Chat',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
+  tabBarIcon: ({ focused,tintColor }) => (
+     focused ? <Image
+         source={require('../images/chat-selected.png')}
+
+       />
+       :
+       <Image
+         source={require('../images/chat.png')}
+
+       />
   ),
 };
 

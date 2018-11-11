@@ -56,7 +56,7 @@ export default class HomeScreen extends React.Component {
       <ScrollView style={styles.container}>
         <StatusBar hidden/>
         <TouchableOpacity onPress={this.logoff}>
-          <Text>Log Off</Text>
+          <Text style={{fontWeight:'bold'}}>Log Off</Text>
         </TouchableOpacity>
 
         <View style={styles.sonamContainer}>
@@ -120,6 +120,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff'
   },
   veteranPic: {
     flexDirection: 'row',
@@ -139,10 +140,10 @@ const styles = StyleSheet.create({
   },
   sonamContainer: {
     flexDirection: 'column',
-    backgroundColor: '#fff',
+    backgroundColor: '#F2F2F2',
     margin: 10,
     padding: 10,
-    borderRadius: 2,
+    borderRadius: 5,
     shadowColor: 'lightgray',
     shadowOffset: { width: 0, height: .5 },
     shadowOpacity: 0.4,
