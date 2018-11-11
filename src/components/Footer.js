@@ -12,7 +12,7 @@ class Footer extends Component {
  render() {
      return (
         <div className="Footer">
-          <p>&copy; {new Date().getFullYear()} Veteran App. ALL RIGHTS RESERVED. </p>
+          <p>&copy; {new Date().getFullYear()} Vetricle. ALL RIGHTS RESERVED. </p>
           <div className="footerContainer">
             <p>Terms of Service</p>
             <p>Privacy Policy</p>

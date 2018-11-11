@@ -17,7 +17,7 @@ class AboutTab extends Component {
         <div className="homeTab">
           <div className="homeBanner">
             <h1>What do you love?</h1>
-            <h2>Do more of it with Veteran App</h2>
+            <h2>Do more of it with Vetricle</h2>
             <div className="signUpButton">
               <a>
                 <p>Sign Up</p>
